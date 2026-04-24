@@ -1,0 +1,38 @@
+name: Update F-Droid TV Index
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'repo/**.apk'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install fdroidserver
+        run: pip install fdroidserver --break-system-packages
+
+      - name: Run fdroid update
+        run: fdroid update --verbose
+
+      - name: Commit updated index
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add repo/ metadata/ || true
+
+          if git diff --cached --quiet; then
+            echo "Index unchanged, nothing to commit."
+          else
+            git commit -m "chore: regenerate F-Droid TV index"
+            git push
+          fi

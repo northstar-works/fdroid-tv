@@ -1,0 +1,7 @@
+repo_url: "https://northstar-works.github.io/fdroid-tv/repo"
+repo_name: "Northstar Labs TV"
+repo_description: |-
+  Official F-Droid repository for Northstar Labs Fire TV & Android TV apps.
+  Add this repo in Flikky: https://northstar-works.github.io/fdroid-tv/repo
+
+archive_older: 3
