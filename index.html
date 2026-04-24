@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Labs TV — F-Droid Repository</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0c10;
+      --surface: #111418;
+      --border: #1e2530;
+      --accent: #ff6b00;
+      --accent2: #cc4400;
+      --text: #e0eaf5;
+      --muted: #5a6a7a;
+      --green: #00e676;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,107,0,0.10) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tv-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .org {
+      font-size: 13px;
+      font-family: 'Space Mono', monospace;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(120deg, var(--text) 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1rem;
+      font-family: 'Space Mono', monospace;
+      line-height: 1.6;
+    }
+
+    .tv-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: rgba(255,107,0,0.1);
+      border: 1px solid rgba(255,107,0,0.25);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .add-section {
+      padding: 40px 0 36px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .add-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .url-box {
+      display: flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 600px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .url-box:focus-within { border-color: var(--accent); }
+
+    .url-box code {
+      flex: 1;
+      padding: 14px 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .copy-btn {
+      padding: 14px 20px;
+      background: var(--accent2);
+      border: none;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover { background: var(--accent); color: #000; }
+    .copy-btn.copied { background: var(--green); color: #000; }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    .qr-wrap {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .qr-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .qr-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .qr-label strong {
+      display: block;
+      color: var(--text);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .apps-section {
+      padding: 40px 0 36px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
+
+    .apps-section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      max-width: 480px;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+    }
+
+    .app-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    .app-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .app-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .app-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255,107,0,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(255,107,0,0.2);
+    }
+
+    .compat-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .compat {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .compat.yes {
+      background: rgba(0,230,118,0.08);
+      color: var(--green);
+      border-color: rgba(0,230,118,0.2);
+    }
+
+    footer {
+      padding: 32px 0;
+      animation: fadeDown 0.6s 0.3s ease both;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .gh-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+
+    .gh-link:hover { color: var(--text); }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-row">
+      <svg class="tv-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="5" width="30" height="20" rx="2" stroke="#ff6b00" stroke-width="1.5"/>
+        <line x1="12" y1="25" x2="10" y2="31" stroke="#ff6b00" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="24" y1="25" x2="26" y2="31" stroke="#ff6b00" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="9" y1="31" x2="27" y2="31" stroke="#ff6b00" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="7" y="9" width="22" height="12" rx="1" fill="rgba(255,107,0,0.12)" stroke="#ff6b00" stroke-width="0.75"/>
+      </svg>
+      <span class="org">Northstar Labs</span>
+    </div>
+    <h1>F-Droid TV Repository</h1>
+    <p class="tagline">// Fire TV &amp; Android TV apps, distributed directly.<br>No Google Play required.</p>
+    <div class="tv-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+        <circle cx="5" cy="5" r="4"/>
+      </svg>
+      Fire TV &amp; Android TV only
+    </div>
+  </header>
+
+  <section class="add-section">
+    <p class="section-label">Get Started</p>
+    <h2>Add this repo to Flikky / F-Droid</h2>
+
+    <div class="url-box">
+      <code id="repo-url">https://northstar-works.github.io/fdroid-tv/repo</code>
+      <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copy</button>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <span>Install <strong>Flikky</strong> from the Amazon Appstore on your Fire TV</span>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <span>Open Flikky → tap <strong>Repositories</strong> → <strong>Add Repository</strong></span>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span>Enter the repository URL above and confirm</span>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <span>Refresh — StreamVault TV will appear ready to install</span>
+      </div>
+    </div>
+
+    <div class="qr-wrap">
+      <div class="qr-box" id="qrcode"></div>
+      <div class="qr-label">
+        <strong>Scan to add on your device</strong>
+        Point your phone camera at this code<br>
+        to open the repo URL directly.
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-section">
+    <p class="section-label">Available Apps</p>
+    <h2>What's in this repo</h2>
+
+    <div class="app-card">
+      <div class="app-icon">📺</div>
+      <div class="app-name">StreamVault TV</div>
+      <div class="app-desc">
+        Fire TV and Android TV optimized IPTV player with full D-pad navigation,
+        Live Sports scoreboard integration, EPG, M3U playlists, and Plex integration.
+      </div>
+      <div class="app-meta">
+        <span class="badge">v5.6.10</span>
+        <span class="badge">Multimedia</span>
+      </div>
+      <div class="compat-row">
+        <span class="compat yes">✓ Fire TV</span>
+        <span class="compat yes">✓ Android TV</span>
+        <span class="compat yes">✓ Google TV</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Northstar Labs</span>
+      <div class="footer-links">
+        <a class="gh-link" href="https://northstar-works.github.io/fdroid/" target="_blank">
+          All Apps Repo
+        </a>
+        <a class="gh-link" href="https://github.com/northstar-works" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          github.com/northstar-works
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function copyUrl() {
+    const url = document.getElementById('repo-url').textContent;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  new QRCode(document.getElementById('qrcode'), {
+    text: 'https://northstar-works.github.io/fdroid-tv/repo',
+    width: 140,
+    height: 140,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
