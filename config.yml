@@ -5,3 +5,15 @@ repo_description: |-
   Add this repo in Flikky: https://northstar-works.github.io/fdroid-tv/repo
 
 archive_older: 3
+
+repo_keyalias: sidscri-services
+
+
+keydname: CN=sidscri-services, OU=F-Droid
+
+
+keystorepass: L36Cv/iacA/lBlm82N2TEtkHxasjlVb28equtrhauPQ=
+
+
+keypass: L36Cv/iacA/lBlm82N2TEtkHxasjlVb28equtrhauPQ=
+

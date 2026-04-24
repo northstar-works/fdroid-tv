@@ -1,0 +1,168 @@
+{
+  "METADATA_VERSION": 20002,
+  "allow_disabled_algorithms": false,
+  "SVConfig-5.1.0-release.apk": {
+    "hash": "89abf05d9f6d6c09aeb8398f8cf76184fe9b04cb108c22b31496c80e4240b880",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        28
+      ],
+      [
+        "com.sidscri.svconfig.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ],
+      [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        28
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": [],
+    "packageName": "com.sidscri.svconfig",
+    "versionCode": 9,
+    "name": "SV Config",
+    "versionName": "5.1.0",
+    "minSdkVersion": 26,
+    "targetSdkVersion": 34,
+    "sig": "4e8c90ba011d1b4a12ef9bf3c3476ace",
+    "signer": "80fe3fc1aa8e8cc6a1a796b0683a94c656659cd97c9334b17960ab2766c97f8f",
+    "size": 2412204,
+    "apkName": "SVConfig-5.1.0-release.apk",
+    "added": 1777049850.394221
+  },
+  "StreamVault-5.8.4-mobile-release.apk": {
+    "hash": "c1e161b7cfa8efe21e37ccb3a95dc7dcb7b90cadcaaa27a10db4f0f57e9b1e77",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.WAKE_LOCK",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        28
+      ],
+      [
+        "com.northstarworks.streamvault.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ],
+      [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        28
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": [],
+    "packageName": "com.northstarworks.streamvault",
+    "versionCode": 169,
+    "name": "StreamVault",
+    "versionName": "5.8.4",
+    "minSdkVersion": 24,
+    "targetSdkVersion": 34,
+    "sig": "7c809f177dc361b8e3b4f61d544fff3a",
+    "signer": "9540fe05352a4498c606fd30fceb12a99fb0084b5a96e72141f4a3caf5800e87",
+    "size": 5642286,
+    "apkName": "StreamVault-5.8.4-mobile-release.apk",
+    "added": 1777049850.636675
+  },
+  "StreamVault-5.8.4-tv-release.apk": {
+    "hash": "b0024c46f0d83c232cf54db870ba4b1caf6331b43b1856a40ae5bccc5e1dcb2c",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.WAKE_LOCK",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        28
+      ],
+      [
+        "com.northstarworks.streamvault.tv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ],
+      [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        28
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [
+      "android.software.leanback"
+    ],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": [],
+    "packageName": "com.northstarworks.streamvault.tv",
+    "versionCode": 169,
+    "name": "StreamVault",
+    "versionName": "5.8.4-tv",
+    "minSdkVersion": 24,
+    "targetSdkVersion": 34,
+    "sig": "7c809f177dc361b8e3b4f61d544fff3a",
+    "signer": "9540fe05352a4498c606fd30fceb12a99fb0084b5a96e72141f4a3caf5800e87",
+    "size": 5668190,
+    "apkName": "StreamVault-5.8.4-tv-release.apk",
+    "added": 1777049850.886466
+  }
+}
