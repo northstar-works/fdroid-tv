@@ -1,9 +1,1 @@
-<<<<<<< Updated upstream
-{"repo": {"timestamp": 1780463304000, "version": 20002, "name": "My First F-Droid Archive Demo", "icon": "icon.png", "description": "These are the apps that have been archived from the main repo.", "address": "https://northstar-works.github.io/fdroid-tv/archive"}, "requests": {"install": [], "uninstall": []}, "apps": [], "packages": {}}
-=======
-<<<<<<< HEAD
-{"repo": {"timestamp": 1780463039000, "version": 20002, "name": "My First F-Droid Archive Demo", "icon": "icon.png", "description": "These are the apps that have been archived from the main repo.", "address": "https://northstar-works.github.io/fdroid-tv/archive"}, "requests": {"install": [], "uninstall": []}, "apps": [], "packages": {}}
-=======
-{"repo": {"timestamp": 1780463304000, "version": 20002, "name": "My First F-Droid Archive Demo", "icon": "icon.png", "description": "These are the apps that have been archived from the main repo.", "address": "https://northstar-works.github.io/fdroid-tv/archive"}, "requests": {"install": [], "uninstall": []}, "apps": [], "packages": {}}
->>>>>>> a341c134c35a68de5bc5ebd6c8531274ddbe6ec1
->>>>>>> Stashed changes
+{"repo": {"timestamp": 1780464286000, "version": 20002, "name": "My First F-Droid Archive Demo", "icon": "icon.png", "description": "These are the apps that have been archived from the main repo.", "address": "https://northstar-works.github.io/fdroid-tv/archive"}, "requests": {"install": [], "uninstall": []}, "apps": [], "packages": {}}
