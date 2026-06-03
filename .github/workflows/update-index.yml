@@ -25,8 +25,22 @@ jobs:
       - name: Install pinned F-Droid tools
         run: |
           python -m pip install --upgrade pip
+          # Pin BOTH tools. androguard 4.x has a v2/v3 signature-block parser
+          # bug (NoOverwriteDict.append) that crashes `fdroid update` on
+          # v1+v2-signed APKs. 3.4.0a1 is the known-good version.
           python -m pip install "androguard==3.4.0a1" "fdroidserver==2.2.1"
+
+      - name: Verify resolved versions (fail loudly if wrong)
+        run: |
+          set -e
+          which fdroid
           fdroid --version
+          AG_VER=$(python -c "import androguard; print(androguard.__version__)")
+          echo "androguard version: $AG_VER"
+          if [ "$AG_VER" != "3.4.0a1" ]; then
+            echo "::error::androguard resolved to $AG_VER, expected 3.4.0a1. A 4.x version will crash fdroid update."
+            exit 1
+          fi
 
       - name: Verify APK signatures before F-Droid update
         run: |
