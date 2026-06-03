@@ -1,1 +1,9 @@
+<<<<<<< Updated upstream
 {"timestamp": 1780463304000, "version": 20002, "index": {"name": "/index-v2.json", "sha256": "7fef45c4624a3bed18fd539e0422c3d1badd9e35ad5915bbf676cdbfd6ef81f0", "size": 403, "numPackages": 0}, "diffs": {"1777049850000": {"name": "/diff/1777049850000.json", "sha256": "3e7721920e243bdd146722a8ffb1e027aa4bc3d865503f372c495b70341be7e5", "size": 38, "numPackages": 0}, "1777072990000": {"name": "/diff/1777072990000.json", "sha256": "3e7721920e243bdd146722a8ffb1e027aa4bc3d865503f372c495b70341be7e5", "size": 38, "numPackages": 0}}}
+=======
+<<<<<<< HEAD
+{"timestamp": 1780463039000, "version": 20002, "index": {"name": "/index-v2.json", "sha256": "d5f4a8b84f6f20b6552fd991ca0556661aeeab90e8412421dceaa109c3a11fc0", "size": 403, "numPackages": 0}, "diffs": {"1777049850000": {"name": "/diff/1777049850000.json", "sha256": "601bc92c8dd199520df602c3b2dcbd8b546bd14f7c0b77c3ff41e3a355a370d9", "size": 38, "numPackages": 0}, "1777072990000": {"name": "/diff/1777072990000.json", "sha256": "601bc92c8dd199520df602c3b2dcbd8b546bd14f7c0b77c3ff41e3a355a370d9", "size": 38, "numPackages": 0}}}
+=======
+{"timestamp": 1780463304000, "version": 20002, "index": {"name": "/index-v2.json", "sha256": "7fef45c4624a3bed18fd539e0422c3d1badd9e35ad5915bbf676cdbfd6ef81f0", "size": 403, "numPackages": 0}, "diffs": {"1777049850000": {"name": "/diff/1777049850000.json", "sha256": "3e7721920e243bdd146722a8ffb1e027aa4bc3d865503f372c495b70341be7e5", "size": 38, "numPackages": 0}, "1777072990000": {"name": "/diff/1777072990000.json", "sha256": "3e7721920e243bdd146722a8ffb1e027aa4bc3d865503f372c495b70341be7e5", "size": 38, "numPackages": 0}}}
+>>>>>>> a341c134c35a68de5bc5ebd6c8531274ddbe6ec1
+>>>>>>> Stashed changes

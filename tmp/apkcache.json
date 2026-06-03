@@ -34,7 +34,7 @@
     "features": [],
     "icons_src": {},
     "icons": {},
-    "antiFeatures": [],
+    "antiFeatures": {},
     "packageName": "com.sidscri.svconfig",
     "versionCode": 9,
     "name": "SV Config",
@@ -92,7 +92,7 @@
     "features": [],
     "icons_src": {},
     "icons": {},
-    "antiFeatures": [],
+    "antiFeatures": {},
     "packageName": "com.northstarworks.streamvault",
     "versionCode": 169,
     "name": "StreamVault",
@@ -152,7 +152,7 @@
     ],
     "icons_src": {},
     "icons": {},
-    "antiFeatures": [],
+    "antiFeatures": {},
     "packageName": "com.northstarworks.streamvault.tv",
     "versionCode": 169,
     "name": "StreamVault",
@@ -164,5 +164,81 @@
     "size": 5668190,
     "apkName": "StreamVault-5.8.4-tv-release.apk",
     "added": 1777072990.933172
+  },
+  "StreamVault-6.4.3.1-tv-release.apk": {
+    "hash": "d25c271e123e4b88ea3d3625edd3abbafd078f2af58792faf3101dd8f4bc01aa",
+    "hashType": "sha256",
+    "uses-permission": [
+      [
+        "android.permission.INTERNET",
+        null
+      ],
+      [
+        "android.permission.ACCESS_NETWORK_STATE",
+        null
+      ],
+      [
+        "android.permission.ACCESS_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.CHANGE_WIFI_STATE",
+        null
+      ],
+      [
+        "android.permission.WAKE_LOCK",
+        null
+      ],
+      [
+        "android.permission.FOREGROUND_SERVICE",
+        null
+      ],
+      [
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        28
+      ],
+      [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        32
+      ],
+      [
+        "android.permission.READ_MEDIA_VIDEO",
+        null
+      ],
+      [
+        "com.northstarworks.streamvault.tv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        null
+      ]
+    ],
+    "uses-permission-sdk-23": [],
+    "features": [
+      "android.software.leanback"
+    ],
+    "icons_src": {},
+    "icons": {},
+    "antiFeatures": {},
+    "packageName": "com.northstarworks.streamvault.tv",
+    "versionCode": 271,
+    "name": "StreamVault TV",
+    "versionName": "6.4.3.1-tv",
+    "minSdkVersion": 24,
+    "targetSdkVersion": 35,
+    "sig": "7c809f177dc361b8e3b4f61d544fff3a",
+    "signer": "9540fe05352a4498c606fd30fceb12a99fb0084b5a96e72141f4a3caf5800e87",
+    "size": 10885952,
+    "apkName": "StreamVault-6.4.3.1-tv-release.apk",
+    "added": 1780463039.915402
+  },
+  "categories.txt": {
+    "name": "categories",
+    "apkName": "categories.txt",
+    "hash": "23032ac37c45e4589ab811c73b5c738fdc6f17e311798d4bda53b8b77753d9db",
+    "hashType": "sha256",
+    "ipfsCIDv1": null,
+    "versionCode": 0,
+    "versionName": "23032ac",
+    "packageName": "23032ac37c45e4589ab811c73b5c738fdc6f17e311798d4bda53b8b77753d9db",
+    "size": 22,
+    "added": 1780463039.915913
   }
 }
