@@ -239,10 +239,10 @@
     "versionName": "23032ac",
     "packageName": "23032ac37c45e4589ab811c73b5c738fdc6f17e311798d4bda53b8b77753d9db",
     "size": 22,
-    "added": 1780951169.059998
+    "added": 1780953969.263584
   },
   "StreamVault-6.4.3.5-tv-release.apk": {
-    "hash": "7a2457bea276fab58730460b22b5ec5feaff45f6afd12bdc58e9e80214169700",
+    "hash": "d02f6940e3d21c9802826a35dfbc18bf6791475259cd28973d2a8acb1c0ec4ac",
     "hashType": "sha256",
     "uses-permission": [
       [
@@ -282,7 +282,7 @@
         null
       ],
       [
-        "com.northstarworks.streamvault.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.northstarworks.streamvault.tv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
         null
       ]
     ],
@@ -290,24 +290,10 @@
     "features": [
       "android.software.leanback"
     ],
-    "icons_src": {
-      "240": "res/mipmap-hdpi-v4/ic_launcher.png",
-      "160": "res/mipmap-mdpi-v4/ic_launcher.png",
-      "320": "res/mipmap-xhdpi-v4/ic_launcher.png",
-      "480": "res/mipmap-xxhdpi-v4/ic_launcher.png",
-      "640": "res/mipmap-xxxhdpi-v4/ic_launcher.png",
-      "-1": "res/mipmap-mdpi-v4/ic_launcher.png"
-    },
-    "icons": {
-      "640": "com.northstarworks.streamvault.tv.debug.275.png",
-      "480": "com.northstarworks.streamvault.tv.debug.275.png",
-      "320": "com.northstarworks.streamvault.tv.debug.275.png",
-      "240": "com.northstarworks.streamvault.tv.debug.275.png",
-      "160": "com.northstarworks.streamvault.tv.debug.275.png",
-      "0": "com.northstarworks.streamvault.tv.debug.275.png"
-    },
+    "icons_src": {},
+    "icons": {},
     "antiFeatures": {},
-    "packageName": "com.northstarworks.streamvault.tv.debug",
+    "packageName": "com.northstarworks.streamvault.tv",
     "versionCode": 275,
     "name": "StreamVault TV",
     "versionName": "6.4.3.5-tv",
@@ -315,9 +301,8 @@
     "targetSdkVersion": 35,
     "sig": "b83905a5715702393f3da835d6527989",
     "signer": "1c736e0a59ce89e4820a8bca9924f8d2381acd5f9103c71a869ca7592568a1f8",
-    "size": 13097151,
+    "size": 10894375,
     "apkName": "StreamVault-6.4.3.5-tv-release.apk",
-    "icon": "com.northstarworks.streamvault.tv.debug.275.png",
-    "added": 1780951169.059479
+    "added": 1780953969.263052
   }
 }
