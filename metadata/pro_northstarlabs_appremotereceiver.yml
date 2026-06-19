@@ -1,0 +1,22 @@
+Name: App Remote Receiver
+Summary: Remote control receiver for Fire TV and Android
+Description: |-
+    App Remote Receiver runs on Fire TV and Android TV devices, listening for
+    commands from a paired companion app. Pair once, then control playback,
+    navigation, and app actions remotely without needing the TV remote in hand.
+    No accounts. No tracking. No ads.
+
+Categories:
+  - System
+  - Connectivity
+License: Proprietary
+AuthorName: Northstar Labs
+AuthorWebSite: https://github.com/northstar-works
+SourceCode: https://github.com/northstar-works/app-remote-receiver
+IssueTracker: https://github.com/northstar-works/app-remote-receiver/issues
+
+AutoUpdateMode: None
+UpdateCheckMode: None
+
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1
