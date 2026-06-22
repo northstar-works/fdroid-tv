@@ -1,13 +1,12 @@
 Name: App Remote Receiver
-Summary: Receive APKs over your local network and install on TV
+Summary: Receive APKs on Fire TV and Android TV for local app install approval
 Description: |-
-    App Remote Receiver runs on Fire TV and Android TV devices. It listens on
-    your local network for paired APK uploads from App Remote Deploy, then shows
-    an on-TV approval/install screen so you can install or update apps without
-    waiting for an F-Droid repo refresh.
+    App Remote Receiver runs on Fire TV and Android TV devices and listens on
+    the local network for APK uploads from a paired App Remote sender.
 
-    Designed for private/home-network deployment and testing. No accounts. No ads.
-    Keep the receiver on trusted networks only, and only approve APKs you trust.
+    It is designed for private LAN deployment workflows. Send an APK from the
+    Docker or desktop sender, approve it on the TV, then use the normal Android
+    package installer to install or update the app.
 
 Categories:
   - System
@@ -18,8 +17,11 @@ AuthorWebSite: https://github.com/northstar-works
 SourceCode: https://github.com/northstar-works/app-remote-receiver
 IssueTracker: https://github.com/northstar-works/app-remote-receiver/issues
 
+RepoType: git
+Repo: https://github.com/northstar-works/app-remote-receiver
+
 AutoUpdateMode: None
 UpdateCheckMode: None
 
-CurrentVersion: 1.0.3
-CurrentVersionCode: 4
+CurrentVersion: 1.0.4
+CurrentVersionCode: 5
